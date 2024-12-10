@@ -1,0 +1,107 @@
+{
+  "design_patterns": {
+    "creational": [
+      {
+        "name": "Singleton",
+        "description": "Singleton zapewnia, że istnieje tylko jedna instancja klasy i umożliwia globalny dostęp do niej. Jest to przydatne, gdy konieczne jest zarządzanie zasobem współdzielonym, takim jak konfiguracja aplikacji czy połączenie z bazą danych, i zapewnienie, że jest on tworzony tylko raz w całym cyklu życia aplikacji. Przykładem może być logger, który zapisuje dane w jednym pliku z dowolnego miejsca aplikacji.",
+        "advantages": [
+          "Zapewnia kontrolę dostępu do jednej instancji.",
+          "Zmniejsza zużycie zasobów, ponieważ instancja jest tworzona tylko raz.",
+          "Łatwy do wdrożenia i zrozumienia."
+        ],
+        "disadvantages": [
+          "Może prowadzić do problemów z testowaniem jednostkowym, ponieważ stan singletonu jest globalny i może wpływać na inne testy.",
+          "Singleton może być nadużywany i prowadzić do problemów z projektowaniem, takich jak trudności z rozszerzalnością.",
+          "Może wprowadzać ukryte zależności między komponentami."
+        ]
+      },
+      {
+        "name": "Factory Method",
+        "description": "Factory Method definiuje interfejs do tworzenia obiektów, ale pozwala podklasom decydować, którą klasę instancjonować. Factory Method umożliwia tworzenie obiektów w sposób abstrakcyjny, bez potrzeby znajomości konkretnych klas, co pozwala na łatwe wprowadzanie nowych typów obiektów w przyszłości. Przykładem jest system zarządzania dokumentami, który może tworzyć różne typy dokumentów, takie jak teksty czy arkusze kalkulacyjne.",
+        "advantages": [
+          "Pozwala na lepszą kontrolę nad procesem tworzenia obiektów.",
+          "Umożliwia elastyczność w rozszerzaniu klas bez modyfikacji kodu klienta.",
+          "Ułatwia dodawanie nowych typów produktów."
+        ],
+        "disadvantages": [
+          "Może prowadzić do skomplikowanych hierarchii klas, co utrudnia zrozumienie kodu.",
+          "Wprowadza dodatkowe klasy i interfejsy, co może zwiększyć złożoność projektu.",
+          "Może wymagać znacznej ilości kodu, aby obsłużyć wszystkie przypadki użycia."
+        ]
+      },
+      {
+        "name": "Abstract Factory",
+        "description": "Abstract Factory dostarcza interfejsu do tworzenia rodzin spokrewnionych obiektów bez określania ich konkretnych klas. Umożliwia tworzenie zestawów obiektów powiązanych tematycznie, zapewniając spójność między nimi i izolując kod kliencki od szczegółów implementacyjnych. Przykładem może być aplikacja GUI, która może tworzyć różne elementy interfejsu użytkownika dla różnych systemów operacyjnych.",
+        "advantages": [
+          "Zapewnia spójność między produktami tworzonymi przez fabrykę.",
+          "Izoluje kod klienta od szczegółów implementacyjnych.",
+          "Łatwe do rozszerzenia w przyszłości, aby obsługiwać nowe rodziny produktów."
+        ],
+        "disadvantages": [
+          "Może prowadzić do skomplikowanych hierarchii klas, co utrudnia zrozumienie kodu.",
+          "Dodaje dodatkową warstwę abstrakcji, która może zwiększyć złożoność projektu.",
+          "Może wymagać znacznej ilości kodu, aby obsłużyć wszystkie przypadki użycia."
+        ]
+      },
+      {
+        "name": "Builder",
+        "description": "Builder oddziela konstrukcję złożonych obiektów od ich reprezentacji, dzięki czemu ten sam proces konstrukcji może stworzyć różne reprezentacje. Jest użyteczny, gdy tworzenie obiektu wymaga wielu kroków lub konfiguracji, pozwalając na złożenie obiektu krok po kroku. Przykładem może być konfigurator samochodów, gdzie klient może wybrać różne cechy pojazdu i złożyć go zgodnie ze swoimi preferencjami.",
+        "advantages": [
+          "Umożliwia stopniowe tworzenie złożonych obiektów.",
+          "Oddziela kod konstrukcji od kodu reprezentacji.",
+          "Łatwe do modyfikacji i rozbudowy."
+        ],
+        "disadvantages": [
+          "Może wprowadzać dodatkową złożoność, zwłaszcza w prostych przypadkach.",
+          "Może prowadzić do problemów z wydajnością, jeśli obiekt jest budowany w wielu krokach.",
+          "Może wymagać większej ilości kodu niż inne wzorce kreacyjne."
+        ]
+      },
+      {
+        "name": "Prototype",
+        "description": "Prototype umożliwia klonowanie obiektów zamiast ich tworzenia od nowa. Jest to przydatne, gdy koszt tworzenia nowego obiektu jest wysoki, a klonowanie istniejącego obiektu może być bardziej wydajne i pozwala zachować stan oryginalnego obiektu. Przykładem jest aplikacja graficzna, gdzie użytkownik może tworzyć kopie istniejących kształtów i modyfikować je według potrzeb.",
+        "advantages": [
+          "Zmniejsza koszty tworzenia obiektów.",
+          "Umożliwia tworzenie nowych obiektów z wcześniej zdefiniowanych wzorców.",
+          "Zapewnia elastyczność w tworzeniu obiektów."
+        ],
+        "disadvantages": [
+          "Może być skomplikowane w implementacji, jeśli obiekty mają złożone zależności.",
+          "Klonowanie obiektów może prowadzić do problemów z wydajnością, jeśli obiekty są duże.",
+          "Może wprowadzać problemy z zarządzaniem pamięcią, jeśli obiekty są klonowane zbyt często."
+        ]
+      }
+    ],
+    "structural": [
+      {
+        "name": "Adapter",
+        "description": "Adapter pozwala na współpracę klas o niezgodnych interfejsach, przekształcając jeden interfejs w inny. Jest użyteczny, gdy chcesz użyć istniejącej klasy, ale jej interfejs nie pasuje do wymagań klienta. Adapter pozwala na ponowne użycie klasy bez potrzeby jej modyfikacji. Przykładem jest zasilacz, który umożliwia podłączenie urządzeń elektrycznych o różnych wtyczkach do jednego gniazdka.",
+        "advantages": [
+          "Umożliwia współpracę klas o niezgodnych interfejsach.",
+          "Pozwala na ponowne użycie istniejących klas bez ich modyfikacji.",
+          "Łatwy do wdrożenia i zrozumienia."
+        ],
+        "disadvantages": [
+          "Może prowadzić do skomplikowanych hierarchii klas, co utrudnia zrozumienie kodu.",
+          "Może wprowadzać dodatkowe zależności między klasami.",
+          "Może prowadzić do problemów z wydajnością, jeśli adapter jest używany często."
+        ]
+      },
+      {
+        "name": "Bridge",
+        "description": "Bridge oddziela abstrakcję od jej implementacji, co pozwala na ich niezależne zmiany. Umożliwia rozwijanie obydwu stron hierarchii klas bez wpływu na siebie nawzajem, co prowadzi do większej elastyczności i skalowalności. Przykładem może być system grafiki komputerowej, gdzie abstrakcja kształtu może być oddzielona od jego renderowania.",
+        "advantages": [
+          "Oddziela abstrakcję od jej implementacji, co ułatwia niezależne zmiany.",
+          "Umożliwia rozwijanie obydwu stron hierarchii klas bez wpływu na siebie nawzajem.",
+          "Zwiększa elastyczność i skalowalność projektu."
+        ],
+        "disadvantages": [
+          "Może prowadzić do skomplikowanych hierarchii klas, co utrudnia zrozumienie kodu.",
+          "Wprowadza dodatkową warstwę abstrakcji, która może zwiększyć złożoność projektu.",
+          "Może wymagać znacznej ilości kodu, aby obsłużyć wszystkie przypadki użycia."
+        ]
+      },
+      {
+        "name": "Composite",
+        "description": "Composite pozwala grupować obiekty w strukturę drzewiastą, by traktować je jako jeden obiekt. Jest użyteczny w systemach hierarchicznych, gdzie pojedyncze obiekty i ich grupy są traktowane jednakowo, upraszczając kod klienta i operacje na strukturach. Przykładem może być system plików, gdzie pliki i foldery są reprezentowane jako węzły w drzewie.",
+        "advantages": 
